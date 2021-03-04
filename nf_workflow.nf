@@ -4,7 +4,7 @@ params.input = "README.md"
 
 TOOL_FOLDER = "$baseDir/bin"
 
-process process {
+process processData {
     //conda '/path/to/an/existing/env/directory'
     //container 'image_name_1'
 
