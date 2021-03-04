@@ -18,6 +18,5 @@ process process {
 
     """
     python $TOOL_FOLDER/script.py $input output.tsv
-
     """
 }
