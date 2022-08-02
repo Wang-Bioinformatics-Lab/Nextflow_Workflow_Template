@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: wanglab-jupyter-workflowtemplate
     volumes:
-      - ../:/home/jovyan/work/src:rw
+      - ../:/home/jovyan/work:rw
     ports:
     - "9000:8888"
     restart: unless-stopped
