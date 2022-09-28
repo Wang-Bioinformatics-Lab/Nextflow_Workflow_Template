@@ -1,0 +1,17 @@
+from linuxserver/code-server:4.7.0
+
+RUN apt-get update && apt-get install -y \
+    git-core
+RUN apt-get install build-essential wget -y
+
+ENV CONDA_DIR /opt/conda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p $CONDA_DIR
+ENV PATH=$CONDA_DIR/bin:$PATH
+
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
+
+# Nextfow
+RUN conda install -y mamba -c conda-forge
+RUN mamba install -y -c bioconda nextflow

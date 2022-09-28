@@ -16,3 +16,5 @@ services:
      resources:
        limits:
          memory: 16000M
+    labels:
+      - traefik.http.routers.backend.rule=Host(`test.wanglab.science`)
