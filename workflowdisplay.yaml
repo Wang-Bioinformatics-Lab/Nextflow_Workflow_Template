@@ -1,4 +1,4 @@
-name: template_workflow
+name: template_nextflow_workflow
 displayname: STUFF
 Views:
 -   name: Summary List

@@ -2,13 +2,16 @@
 
 params.input = "README.md"
 
+// Workflow Boiler Plate
+params.OMETALINKING_YAML = "flow_filelinking.yaml"
+params.OMETAPARAM_YAML = "job_parameters.yaml"
+
 TOOL_FOLDER = "$baseDir/bin"
 
 process processData {
-    //conda '/path/to/an/existing/env/directory'
-    //container 'image_name_1'
-
     publishDir "./nf_output", mode: 'copy'
+
+    conda "$baseDir/conda_env.yml"
 
     input:
     file input from Channel.fromPath(params.input)

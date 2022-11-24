@@ -1,6 +1,6 @@
-workflowname: template_workflow
-workflowdescription: template_workflow
-workflowlongdescription: template_workflow
+workflowname: template_nextflow_workflow
+workflowdescription: template_nextflow_workflow
+workflowlongdescription: This is a template nextflow workflow for GNPS2
 workflowversion: "0.1"
 workflowfile: nf_workflow.nf
 workflowautohide: false
