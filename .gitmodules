@@ -1,0 +1,3 @@
+[submodule "GNPS2_DeploymentTooling"]
+	path = GNPS2_DeploymentTooling
+	url = https://github.com/Wang-Bioinformatics-Lab/GNPS2_DeploymentTooling.git
