@@ -1,2 +1,2 @@
--include .Makefile.credentials
+-include ./Makefile.credentials
 include ./Makefile.deploytemplate

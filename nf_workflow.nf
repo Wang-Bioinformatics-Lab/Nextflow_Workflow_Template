@@ -11,7 +11,7 @@ TOOL_FOLDER = "$baseDir/bin"
 process processData {
     publishDir "./nf_output", mode: 'copy'
 
-    conda "$baseDir/conda_env.yml"
+    conda "$TOOL_FOLDER/conda_env.yml"
 
     input:
     file input from Channel.fromPath(params.input)
