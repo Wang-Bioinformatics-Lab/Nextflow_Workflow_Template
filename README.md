@@ -10,6 +10,10 @@ To learn NextFlow checkout this documentation:
 
 https://www.nextflow.io/docs/latest/index.html
 
+## Installation
+
+You will need to have conda, mamba, and nextflow installed. 
+
 ## Deployment to GNPS2
 
 In order to deploy, we have a set of deployment tools that will enable deployment to the various gnps systems. To run the deployment, use the following commands from the deploy_gnps2 folder. 
