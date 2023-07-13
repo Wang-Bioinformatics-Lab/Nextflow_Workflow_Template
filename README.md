@@ -28,3 +28,8 @@ You might need to checkout the module, do this by running
 git submodule init
 git submodule update
 ```
+## Workflow Input information
+
+Check the definition for the workflow input and display parameters:
+https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/workflowdev/
+
