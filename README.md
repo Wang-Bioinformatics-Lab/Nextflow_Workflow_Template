@@ -31,6 +31,10 @@ You will also need to specify the user on the server that you've been given that
 USERNAME=<enter the username>
 ```
 
+### Deployment Dependencies
+
+You will need to install the dependencies in GNPS2_DeploymentTooling/requirements.txt
+
 ### Deploying to Dev Server
 
 To deploy to development, use the following command, if you don't have your ssh public key installed onto the server, you will not be able to deploy.
