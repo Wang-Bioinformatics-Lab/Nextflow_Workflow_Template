@@ -28,7 +28,7 @@ git submodule update
 You will also need to specify the user on the server that you've been given that your public key has been associated with. If you want to not enter this every time you do a deployment, you can create a Makefile.credentials file in the deploy_gnps2 folder with the following contents
 
 ```
-USERNAME=<enter the username here>
+USERNAME=<enter the username>
 ```
 
 ### Deploying to Dev Server
