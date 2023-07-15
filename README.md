@@ -31,6 +31,15 @@ You will also need to specify the user on the server that you've been given that
 USERNAME=<enter the username>
 ```
 
+Also update your ssh config file to include the following ssh target:
+
+```
+Host ucr-gnps2-dev
+    Hostname ucr-lemon.duckdns.org
+```
+
+
+
 ### Deployment Dependencies
 
 You will need to install the dependencies in GNPS2_DeploymentTooling/requirements.txt
