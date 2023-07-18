@@ -16,7 +16,15 @@ You will need to have conda, mamba, and nextflow installed to run things locally
 
 ## Deployment to GNPS2
 
-In order to deploy, we have a set of deployment tools that will enable deployment to the various gnps2 systems. To run the deployment, use the following commands from the deploy_gnps2 folder. 
+In order to deploy, we have a set of deployment tools that will enable deployment to the various gnps2 systems. To run the deployment, you will need the following setup steps completed:
+
+1. Checked out of the deployment submodules
+1. Conda environment and dependencies
+1. SSH configuration updated
+
+### Checking out the deployment submodules
+
+use the following commands from the deploy_gnps2 folder. 
 
 You might need to checkout the module, do this by running
 
@@ -31,13 +39,6 @@ You will also need to specify the user on the server that you've been given that
 USERNAME=<enter the username>
 ```
 
-Also update your ssh config file to include the following ssh target:
-
-```
-Host ucr-gnps2-dev
-    Hostname ucr-lemon.duckdns.org
-```
-
 ### Deployment Dependencies
 
 You will need to install the dependencies in GNPS2_DeploymentTooling/requirements.txt on your own local machine. 
@@ -47,6 +48,15 @@ One way to do this is to use conda to create an environment, for example:
 ```
 conda create -n deploy python=3.8
 pip install -r GNPS2_DeploymentTooling/requirements.txt
+```
+
+### SSH Configuration
+
+Also update your ssh config file to include the following ssh target:
+
+```
+Host ucr-gnps2-dev
+    Hostname ucr-lemon.duckdns.org
 ```
 
 ### Deploying to Dev Server
