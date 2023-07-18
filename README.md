@@ -38,11 +38,16 @@ Host ucr-gnps2-dev
     Hostname ucr-lemon.duckdns.org
 ```
 
-
-
 ### Deployment Dependencies
 
-You will need to install the dependencies in GNPS2_DeploymentTooling/requirements.txt
+You will need to install the dependencies in GNPS2_DeploymentTooling/requirements.txt on your own local machine. 
+
+One way to do this is to use conda to create an environment, for example:
+
+```
+conda create -n deploy python=3.8
+pip install -r GNPS2_DeploymentTooling/requirements.txt
+```
 
 ### Deploying to Dev Server
 
