@@ -5,6 +5,7 @@ channels:
 dependencies:
   - python=3.8.8
   - pandas
+  - rpy2
   - pip:
     - xmltodict
     - requests

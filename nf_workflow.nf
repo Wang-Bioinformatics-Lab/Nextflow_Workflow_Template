@@ -14,10 +14,13 @@ process processData {
     file input 
 
     output:
-    file 'output.tsv'
-
+    file 'python_output.tsv'
+    file 'R_output.txt'
+    file 'rpy2_output.txt'
     """
-    python $TOOL_FOLDER/script.py $input output.tsv
+    python $TOOL_FOLDER/script.py $input python_output.tsv
+    Rscript  $TOOL_FOLDER/R_script.R
+    python $TOOL_FOLDER/rpy2_script.py
     """
 }
 
