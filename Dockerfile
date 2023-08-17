@@ -1,5 +1,5 @@
 # Build from an image with mamba
-FROM condaforge/mambaforge
+FROM condaforge/mambaforge:23.1.0-4
 
 # Disable interactive installation
 ENV DEBIAN_FRONTEND=noninteractive
