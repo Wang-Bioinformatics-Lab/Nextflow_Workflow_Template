@@ -1,0 +1,13 @@
+
+version: '3.8'
+services:
+  wanglab_nf_template_with_r_and_docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wanglab_nf_template_with_r_and_docker
+    # Note that there are no volumes, nextflow will automatically mount the current directory
+    ports:
+    - "9000:9000"
+    restart: unless-stopped
+    command: nextflow run nf_workflow.nf -resume

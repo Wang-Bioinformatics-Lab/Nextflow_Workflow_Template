@@ -8,7 +8,7 @@ TOOL_FOLDER = "$baseDir/bin"
 process processData {
     publishDir "./nf_output", mode: 'copy'
 
-    conda "$TOOL_FOLDER/conda_env.yml"
+    conda "my_env" // using a named conda environment
 
     input:
     file input 

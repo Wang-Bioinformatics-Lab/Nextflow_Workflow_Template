@@ -12,7 +12,7 @@ https://www.nextflow.io/docs/latest/index.html
 
 ## Installation
 
-You will need to have conda, mamba, and nextflow installed to run things locally. 
+You will need to have docker and nextflow installed to run things locally. 
 
 ## Deployment to GNPS2
 
