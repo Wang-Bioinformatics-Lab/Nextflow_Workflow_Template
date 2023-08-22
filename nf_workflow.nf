@@ -17,14 +17,14 @@ process processDataPython {
     file 'python_output.tsv'
 
     """
-    python $TOOL_FOLDER/script.py $input python_output.tsv
+    python $TOOL_FOLDER/python_script.py $input python_output.tsv
     """
 }
 
 process processDataR {
     publishDir "./nf_output", mode: 'copy'
 
-    conda "$TOOL_FOLDER/conda_env.yml"
+    conda "$TOOL_FOLDER/conda_env_r.yml"
 
     input:
     file input 
