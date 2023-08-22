@@ -35,11 +35,11 @@ jobs:
     - name: Set up Conda
       uses: conda-incubator/setup-miniconda@v2
       with:
-        #activate-environment: nextflow
-        activate-environment: ""
+        activate-environment: nextflow
+        #activate-environment: ""
         environment-file: test/test_environment.yml
         #python-version: 3.8
         auto-activate-base: true
     - name: Test Workflow
       run: |
-        make run
+        conda activate nextflow && make run
