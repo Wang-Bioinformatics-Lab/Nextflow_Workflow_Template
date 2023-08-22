@@ -14,6 +14,12 @@ https://www.nextflow.io/docs/latest/index.html
 
 You will need to have conda, mamba, and nextflow installed to run things locally. 
 
+## GNPS2 Workflow Input information
+
+Check the definition for the workflow input and display parameters:
+https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/workflowdev/
+
+
 ## Deployment to GNPS2
 
 In order to deploy, we have a set of deployment tools that will enable deployment to the various gnps2 systems. To run the deployment, you will need the following setup steps completed:
@@ -74,3 +80,4 @@ To deploy to production, use the following command, if you don't have your ssh p
 ```
 make deploy-prod
 ```
+
