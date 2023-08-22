@@ -42,4 +42,4 @@ jobs:
         auto-activate-base: true
     - name: Test Workflow
       run: |
-        conda activate nextflow && make run
+        make run
