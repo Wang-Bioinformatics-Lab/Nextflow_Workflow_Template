@@ -37,7 +37,6 @@ jobs:
       with:
         activate-environment: nextflow
         environment-file: test/test_environment.yml
-        mamba-version: "*"
         auto-activate-base: true
     - name: Test Workflow
       shell: bash -el {0}
