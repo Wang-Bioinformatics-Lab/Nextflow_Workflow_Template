@@ -27,6 +27,9 @@ jobs:
         export PATH="$HOME/miniconda/bin:$PATH"
         conda init bash
         conda config --set always_yes yes --set changeps1 no
+
+        # Install mamba
+        conda install -c conda-forge mamba
     - name: Test Workflow
       run: |
         make run
