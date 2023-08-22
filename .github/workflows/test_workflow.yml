@@ -38,7 +38,7 @@ jobs:
         #activate-environment: nextflow
         activate-environment: ""
         environment-file: test/test_environment.yml
-        python-version: 3.8
+        #python-version: 3.8
         auto-activate-base: true
     - name: Test Workflow
       run: |
