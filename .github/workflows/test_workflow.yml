@@ -41,5 +41,6 @@ jobs:
         #python-version: 3.8
         auto-activate-base: true
     - name: Test Workflow
+      shell: bash -el {0}
       run: |
-        conda init bash && conda activate nextflow && make run
+        conda activate nextflow && make run
