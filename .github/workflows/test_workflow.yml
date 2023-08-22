@@ -36,9 +36,8 @@ jobs:
       uses: conda-incubator/setup-miniconda@v2
       with:
         activate-environment: nextflow
-        #activate-environment: ""
         environment-file: test/test_environment.yml
-        #python-version: 3.8
+        mamba-version: "*"
         auto-activate-base: true
     - name: Test Workflow
       shell: bash -el {0}
