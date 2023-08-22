@@ -5,7 +5,7 @@ params.input = "README.md"
 
 TOOL_FOLDER = "$baseDir/bin"
 
-process processData {
+process processDataPython {
     publishDir "./nf_output", mode: 'copy'
 
     conda "$TOOL_FOLDER/conda_env.yml"
@@ -15,10 +15,25 @@ process processData {
 
     output:
     file 'python_output.tsv'
-    file 'R_output.txt'
-    file 'rpy2_output.txt'
+
     """
     python $TOOL_FOLDER/script.py $input python_output.tsv
+    """
+}
+
+process processDataR {
+    publishDir "./nf_output", mode: 'copy'
+
+    conda "$TOOL_FOLDER/conda_env.yml"
+
+    input:
+    file input 
+
+    output:
+    file 'R_output.txt'
+    file 'rpy2_output.txt'
+
+    """
     Rscript  $TOOL_FOLDER/R_script.R
     python $TOOL_FOLDER/rpy2_script.py
     """
@@ -26,5 +41,10 @@ process processData {
 
 workflow {
     data = Channel.fromPath(params.input)
-    processData(data)
+    
+    // Outputting Python
+    processDataPython(data)
+
+    // Outputting R
+    processDataR(data)
 }
