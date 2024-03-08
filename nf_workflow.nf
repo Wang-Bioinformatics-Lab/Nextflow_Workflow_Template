@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2
 
-params.input = "README.md"
+params.input_spectra = "README.md"
 
 TOOL_FOLDER = "$baseDir/bin"
 
@@ -21,30 +21,11 @@ process processDataPython {
     """
 }
 
-process processDataR {
-    publishDir "./nf_output", mode: 'copy'
-
-    conda "$TOOL_FOLDER/conda_env_r.yml"
-
-    input:
-    file input 
-
-    output:
-    file 'R_output.txt'
-    file 'rpy2_output.txt'
-
-    """
-    Rscript  $TOOL_FOLDER/R_script.R
-    python $TOOL_FOLDER/rpy2_script.py
-    """
-}
 
 workflow {
-    data = Channel.fromPath(params.input)
+    data_ch = Channel.fromPath(params.input_spectra)
     
     // Outputting Python
-    processDataPython(data)
+    processDataPython(data_ch)
 
-    // Outputting R
-    processDataR(data)
 }

@@ -12,7 +12,7 @@ parameterlist:
 
     - displayname: Input Data Folder
       paramtype: fileselector
-      nf_paramname: input_spectra_folder
+      nf_paramname: input_spectra
       formplaceholder: Enter the path to data
       formvalue: ""
       targettaskfolder: input_spectra
