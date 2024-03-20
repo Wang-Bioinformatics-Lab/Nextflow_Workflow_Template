@@ -49,6 +49,8 @@ USERNAME=<enter the username>
 
 You will need to install the dependencies in GNPS2_DeploymentTooling/requirements.txt on your own local machine. 
 
+You can find this [here](https://github.com/Wang-Bioinformatics-Lab/GNPS2_DeploymentTooling).
+
 One way to do this is to use conda to create an environment, for example:
 
 ```
