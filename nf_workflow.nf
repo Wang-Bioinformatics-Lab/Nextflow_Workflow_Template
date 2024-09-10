@@ -4,11 +4,11 @@ nextflow.enable.dsl=2
 params.input_spectra = "README.md"
 
 //This publish dir is mostly  useful when we want to import modules in other workflows, keep it here usually don't change it
-params.publishDir = "$baseDir/nf_output"
+params.publishdir = "$baseDir/nf_output"
 TOOL_FOLDER = "$baseDir/bin"
 
 process processDataPython {
-    publishDir "$params.publishDir", mode: 'copy'
+    publishDir "$params.publishdir", mode: 'copy'
 
     conda "$TOOL_FOLDER/conda_env.yml"
 
