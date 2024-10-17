@@ -46,12 +46,13 @@ workflow Main{
 
     combined_results = res_module1.concat(results_extra)
 
-    combined_results.collectFile(name: "${input_map.publish_dir}/python_output2.tsv", newLine: false, keepHeader: true, skip: 1)
+    results = combined_results.collectFile(name: "${input_map.publish_dir}/python_output2.tsv", newLine: false, keepHeader: true, skip: 1)
 
     publish:
     results_extra >> input_map.publish_dir
 
-    
+    emit:
+    results
 }
 
 workflow {

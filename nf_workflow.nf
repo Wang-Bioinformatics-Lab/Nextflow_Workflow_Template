@@ -47,13 +47,12 @@ workflow Main{
 }
 
 workflow {
-    input_map = [foo: params.foo, bar: params.bar, publish_dir: '.']
+    input_map = [foo: params.foo, bar: params.bar, publish_dir: params.publish_dir]
     _ = Main(input_map)
     // Alternatively we can put everyhthing in the main from the above right here
 }
 
 output{
-    directory params.publish_dir
     mode 'copy'
     // ignoreErrors true
 }
