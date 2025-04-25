@@ -1,3 +1,5 @@
 *.ipynb_checkpoints*
 *.env
 *credentials
+*nextflow.log*
+.nextflow
