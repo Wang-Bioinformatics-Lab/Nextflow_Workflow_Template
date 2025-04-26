@@ -4,8 +4,8 @@ import pandas as pd
 
 def main():
     parser = argparse.ArgumentParser(description='Test write out a file.')
-    parser.add_argument('input_filename')
-    parser.add_argument('output_filename')
+    parser.add_argument('--input_filename')
+    parser.add_argument('--output_filename')
 
     args = parser.parse_args()
 

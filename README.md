@@ -1,4 +1,10 @@
 # Nextflow Template
+Make sure to have the NextflowModule updated if you plan on using it:
+
+```
+git submodule update --init --remote --recursive
+```
+
 
 To run the workflow to test simply do
 
