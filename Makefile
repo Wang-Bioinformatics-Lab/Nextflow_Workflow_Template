@@ -9,3 +9,6 @@ run_slurm:
 
 run_docker:
 	nextflow run ./nf_workflow.nf -resume -with-docker <CONTAINER NAME>
+
+init_modules:
+	git submodule update --init --recursive
