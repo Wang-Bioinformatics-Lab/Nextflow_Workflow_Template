@@ -13,6 +13,12 @@ MODULES_FOLDER = "$TOOL_FOLDER/NextflowModules"
 // the publishdir is a key word that we're using around all our modules to control where the output files will be saved
 include {summaryLibrary} from "$MODULES_FOLDER/nf_library_search_modules.nf" addParams(publishdir: params.publishdir)
 
+// COMPATIBILITY NOTE: The following might be necessary if this workflow is being deployed in a slightly different environemnt
+// checking if outdir is defined,
+// if so, then set publishdir to outdir
+if (params.outdir) {
+    params.publishdir = params.outdir
+}
 
 process processDataPython {
     /* This is a sample process that runs a python script.
