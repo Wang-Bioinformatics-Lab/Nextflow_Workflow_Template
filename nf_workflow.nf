@@ -9,19 +9,27 @@ params.publishdir = "$launchDir"
 TOOL_FOLDER = "$moduleDir/bin"
 MODULES_FOLDER = "$TOOL_FOLDER/NextflowModules"
 
-// A lot of useful modules are already implemented and added to the nextflow modules, you can import them to use
-// the publishdir is a key word that we're using around all our modules to control where the output files will be saved
-include {summaryLibrary} from "$MODULES_FOLDER/nf_library_search_modules.nf" addParams(publishdir: params.publishdir)
 
 // COMPATIBILITY NOTE: The following might be necessary if this workflow is being deployed in a slightly different environemnt
 // checking if outdir is defined,
 // if so, then set publishdir to outdir
 if (params.outdir) {
-    params.publishdir = params.outdir
+    _publishdir = params.outdir
+}
+else{
+    _publishdir = params.publishdir
 }
 
 // Augmenting with nf_output
-params.publishdir = "${params.publishdir}/nf_output"
+_publishdir = "${_publishdir}/nf_output"
+
+
+
+// A lot of useful modules are already implemented and added to the nextflow modules, you can import them to use
+// the publishdir is a key word that we're using around all our modules to control where the output files will be saved
+include {summaryLibrary} from "$MODULES_FOLDER/nf_library_search_modules.nf" addParams(publishdir: _publishdir)
+
+
 
 process processDataPython {
     /* This is a sample process that runs a python script.
@@ -32,7 +40,7 @@ process processDataPython {
     The script block contains the command that will be run in the process.
     */
 
-    publishDir "$params.publishdir", mode: 'copy'
+    publishDir "$_publishdir", mode: 'copy'
 
     conda "$TOOL_FOLDER/conda_env.yml"
 
