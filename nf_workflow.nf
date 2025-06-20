@@ -5,12 +5,13 @@ nextflow.enable.dsl=2
 params.input_spectra = "$baseDir/data/"
 
 //This publish dir is mostly  useful when we want to import modules in other workflows, keep it here usually don't change it
-params.publishdir = "$baseDir/nf_output"
+params.publishdir = "$launchDir"
 TOOL_FOLDER = "$moduleDir/bin"
 MODULES_FOLDER = "$TOOL_FOLDER/NextflowModules"
 
 // A lot of useful modules are already implemented and added to the nextflow modules, you can import them to use
-include {summaryLibrary} from "$MODULES_FOLDER/nf_library_search_modules.nf" addParams(publishDir: params.publishdir)
+// the publishdir is a key word that we're using around all our modules to control where the output files will be saved
+include {summaryLibrary} from "$MODULES_FOLDER/nf_library_search_modules.nf" addParams(publishdir: params.publishdir)
 
 
 process processDataPython {
@@ -22,7 +23,7 @@ process processDataPython {
     The script block contains the command that will be run in the process.
     */
 
-    publishDir "$params.publishdir", mode: 'copy'
+    publishDir "$params.publishdir/nf_output", mode: 'copy'
 
     conda "$TOOL_FOLDER/conda_env.yml"
 
