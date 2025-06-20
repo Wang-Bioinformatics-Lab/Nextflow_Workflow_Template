@@ -20,6 +20,9 @@ if (params.outdir) {
     params.publishdir = params.outdir
 }
 
+// Augmenting with nf_output
+params.publishdir = "${params.publishdir}/nf_output"
+
 process processDataPython {
     /* This is a sample process that runs a python script.
 
@@ -29,7 +32,7 @@ process processDataPython {
     The script block contains the command that will be run in the process.
     */
 
-    publishDir "$params.publishdir/nf_output", mode: 'copy'
+    publishDir "$params.publishdir", mode: 'copy'
 
     conda "$TOOL_FOLDER/conda_env.yml"
 
