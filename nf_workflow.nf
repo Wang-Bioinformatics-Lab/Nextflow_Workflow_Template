@@ -23,13 +23,9 @@ else{
 // Augmenting with nf_output
 _publishdir = "${_publishdir}/nf_output"
 
-
-
 // A lot of useful modules are already implemented and added to the nextflow modules, you can import them to use
 // the publishdir is a key word that we're using around all our modules to control where the output files will be saved
 include {summaryLibrary} from "$MODULES_FOLDER/nf_library_search_modules.nf" addParams(publishdir: _publishdir)
-
-
 
 process processDataPython {
     /* This is a sample process that runs a python script.
