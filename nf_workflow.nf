@@ -9,6 +9,8 @@ params.publishdir = "$launchDir"
 TOOL_FOLDER = "$moduleDir/bin"
 MODULES_FOLDER = "$TOOL_FOLDER/NextflowModules"
 
+// GNPS2 Boiler Plate
+param.task = "" // This is the GNPS2 task if it is necessary
 
 // COMPATIBILITY NOTE: The following might be necessary if this workflow is being deployed in a slightly different environemnt
 // checking if outdir is defined,
