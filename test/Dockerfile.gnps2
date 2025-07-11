@@ -1,0 +1,24 @@
+FROM ubuntu:22.04
+
+
+# Random System Utilities
+RUN apt-get update -y && apt-get install -y libxrender-dev procps build-essential unzip wget libpcre2-dev libbz2-dev zlib1g-dev liblzma-dev
+
+# For JavaFX
+RUN apt-get update -y && apt-get install -y openjfx libgl1-mesa-glx libfreetype6
+
+# Install Mamba
+ENV CONDA_DIR /opt/conda
+RUN wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O ~/miniforge.sh && /bin/bash ~/miniforge.sh -b -p /opt/conda
+ENV PATH=$CONDA_DIR/bin:$PATH
+
+# Adding to bashrc
+RUN echo "export PATH=$CONDA_DIR:$PATH" >> ~/.bashrc
+
+# Forcing version of Python
+RUN mamba create -n python310 python=3.10 -y
+
+#Installing nextflow
+RUN mamba install -y -n python310 -c bioconda nextflow=24.04.4
+
+WORKDIR /test

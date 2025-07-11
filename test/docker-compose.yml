@@ -1,0 +1,18 @@
+services:
+  test_docker:
+    container_name: test_docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/test
+    command: tail -f /dev/null
+
+  test_docker_gnps2:
+    container_name: test_docker_gnps2
+    build:
+      context: .
+      dockerfile: Dockerfile.gnps2
+    volumes:
+      - ..:/test
+    command: tail -f /dev/null
